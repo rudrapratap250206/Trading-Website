@@ -11,23 +11,23 @@ import GeneralContext from "./GeneralContext";
 import DoughnutChart from "./DoughnoutChart";
 const labels = watchlist.map((subArray) => subArray["name"]);
 const WatchList = () => {
-   const data = {
+  const data = {
     labels,
     datasets: [
       {
-label: "Price",
-data: watchlist.map((stock) => stock.price),
-backgroundColor: [
-  'rgba(75, 192, 192, 0.5)',
-  'rgba(255, 99, 132, 0.5)',
-  'rgba(255, 206, 86, 0.5)',
-  'rgba(54, 162, 235, 0.5)',
-  'rgba(153, 102, 255, 0.5)',
-  'rgba(255, 159, 64, 0.5)',
-],
-      }
+        label: "Price",
+        data: watchlist.map((stock) => stock.price),
+        backgroundColor: [
+          "rgba(75, 192, 192, 0.5)",
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(255, 206, 86, 0.5)",
+          "rgba(54, 162, 235, 0.5)",
+          "rgba(153, 102, 255, 0.5)",
+          "rgba(255, 159, 64, 0.5)",
+        ],
+      },
     ],
-   }
+  };
   return (
     <div className="watchlist-container">
       <div className="search-container">
@@ -46,7 +46,7 @@ backgroundColor: [
           return <WatchListItem stock={stock} key={index} />;
         })}
       </ul>
-      
+
       <DoughnutChart data={data} />
     </div>
   );
@@ -74,7 +74,7 @@ const WatchListItem = ({ stock }) => {
           {stock.isDown ? (
             <KeyboardArrowDown className="down" />
           ) : (
-            <KeyboardArrowUp className="down" />
+            <KeyboardArrowUp className="up" />
           )}
           <span className="price">{stock.price}</span>
         </div>

@@ -1,0 +1,18 @@
+{
+  "buildCommand": "cd backend && npm install && cd ../frontend && npm install && npm run build && cd ..",
+  "installCommand": "cd backend && npm install && cd ../frontend && npm install && cd ..",
+  "env": {
+    "MONGO_URL": "@mongo_url",
+    "NODE_ENV": "production"
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "backend/index.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/build/index.html"
+    }
+  ]
+}

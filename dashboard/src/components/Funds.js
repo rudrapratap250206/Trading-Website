@@ -4,80 +4,106 @@ import { Link } from "react-router-dom";
 const Funds = () => {
   return (
     <>
-      <div className="funds">
-        <p>Instant, zero-cost fund transfers with UPI </p>
-        <Link className="btn btn-green">Add funds</Link>
-        <Link className="btn btn-blue">Withdraw</Link>
+      <h3 className="title">Funds</h3>
+
+      <div className="funds-header">
+        <div className="funds-info">
+          <p className="funds-text">
+            Instant, zero-cost fund transfers with UPI
+          </p>
+        </div>
+        <div className="funds-buttons">
+          <Link className="btn btn-green">Add funds</Link>
+          <Link className="btn btn-blue">Withdraw</Link>
+        </div>
       </div>
 
-      <div className="row">
-        <div className="col">
-          <span>
-            <p>Equity</p>
-          </span>
+      <div className="funds-container">
+        <div className="funds-column">
+          <div className="section-header">
+            <h4 className="section-title">Equity</h4>
+          </div>
 
-          <div className="table">
-            <div className="data">
-              <p>Available margin</p>
-              <p className="imp colored">4,043.10</p>
+          <div className="funds-card">
+            <div className="card-section highlight">
+              <div className="data-row">
+                <span className="label">Available margin</span>
+                <span className="value colored">₹4,043.10</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Used margin</span>
+                <span className="value">₹3,757.30</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Available cash</span>
+                <span className="value colored">₹4,043.10</span>
+              </div>
             </div>
-            <div className="data">
-              <p>Used margin</p>
-              <p className="imp">3,757.30</p>
+
+            <div className="divider-line"></div>
+
+            <div className="card-section">
+              <div className="data-row">
+                <span className="label">Opening Balance</span>
+                <span className="value">₹4,043.10</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Opening Balance (Commodity)</span>
+                <span className="value">₹3,736.40</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Payin</span>
+                <span className="value">₹4,064.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">SPAN</span>
+                <span className="value">₹0.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Delivery margin</span>
+                <span className="value">₹0.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Exposure</span>
+                <span className="value">₹0.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Options premium</span>
+                <span className="value">₹0.00</span>
+              </div>
             </div>
-            <div className="data">
-              <p>Available cash</p>
-              <p className="imp">4,043.10</p>
-            </div>
-            <hr />
-            <div className="data">
-              <p>Opening Balance</p>
-              <p>4,043.10</p>
-            </div>
-            <div className="data">
-              <p>Opening Balance</p>
-              <p>3736.40</p>
-            </div>
-            <div className="data">
-              <p>Payin</p>
-              <p>4064.00</p>
-            </div>
-            <div className="data">
-              <p>SPAN</p>
-              <p>0.00</p>
-            </div>
-            <div className="data">
-              <p>Delivery margin</p>
-              <p>0.00</p>
-            </div>
-            <div className="data">
-              <p>Exposure</p>
-              <p>0.00</p>
-            </div>
-            <div className="data">
-              <p>Options premium</p>
-              <p>0.00</p>
-            </div>
-            <hr />
-            <div className="data">
-              <p>Collateral (Liquid funds)</p>
-              <p>0.00</p>
-            </div>
-            <div className="data">
-              <p>Collateral (Equity)</p>
-              <p>0.00</p>
-            </div>
-            <div className="data">
-              <p>Total Collateral</p>
-              <p>0.00</p>
+
+            <div className="divider-line"></div>
+
+            <div className="card-section">
+              <div className="data-row">
+                <span className="label">Collateral (Liquid funds)</span>
+                <span className="value">₹0.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Collateral (Equity)</span>
+                <span className="value">₹0.00</span>
+              </div>
+              <div className="data-row">
+                <span className="label">Total Collateral</span>
+                <span className="value">₹0.00</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="col">
-          <div className="commodity">
-            <p>You don't have a commodity account</p>
-            <Link className="btn btn-blue">Open Account</Link>
+        <div className="funds-column">
+          <div className="section-header">
+            <h4 className="section-title">Commodity</h4>
+          </div>
+
+          <div className="commodity-card">
+            <div className="commodity-icon">📦</div>
+            <p className="commodity-text">You don't have a commodity account</p>
+            <p className="commodity-subtext">
+              Open a commodity account to trade in commodities
+            </p>
+            <Link className="btn btn-blue btn-large">Open Account</Link>
           </div>
         </div>
       </div>

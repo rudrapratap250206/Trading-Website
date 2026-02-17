@@ -11,8 +11,14 @@ const PORT = process.env.PORT || 3001;
 const uri = process.env.MONGO_URL;
 
 const app = express();
+const path = require("path");
+
 app.use(bodyParser.json());
 app.use(cors());
+
+// Serve static files from frontend build
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../dashboard/build")));
 
 // MongoDB Connection with proper SSL configuration
 mongoose
@@ -203,17 +209,22 @@ app.get("/allPositions", async (req, res) => {
   res.json(allPositions);
 });
 app.post("/newOrder", async (req, res) => {
-let newOrder = new OrdersModel({
+  let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
     price: req.body.price,
     mode: req.body.mode,
+  });
+  newOrder.save();
+  res.send("Order saved!");
 });
-newOrder.save();
-res.send("Order saved!");
+
+// Serve index.html for all unmatched routes (SPA support)
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
 });
+
 app.listen(PORT, () => {
-  console.log(`App started!`);
-  mongoose.connect(uri);
+  console.log(`App started on port ${PORT}!`);
   console.log(`DB started!`);
 });

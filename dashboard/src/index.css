@@ -848,3 +848,192 @@ hr {
 .action:hover {
   background-color: rgb(212, 212, 212);
 }
+
+/* ===== FUNDS PAGE STYLES ===== */
+
+.funds-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.funds-text {
+  font-size: 0.95rem;
+  color: #8a8a8a;
+  margin: 0;
+  font-weight: 400;
+}
+
+.funds-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.funds-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.funds-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-header {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(71, 71, 71);
+  margin: 0 0 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.funds-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.funds-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-section {
+  padding: 20px;
+}
+
+.card-section.highlight {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+  border-bottom: 2px solid #e8eeff;
+}
+
+.divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ddd, transparent);
+  margin: 0;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #313131;
+}
+
+.value.colored {
+  color: #4184f3;
+  font-weight: 700;
+}
+
+.commodity-card {
+  background: #fff;
+  border: 2px dashed #e0e0e0;
+  border-radius: 6px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.commodity-card:hover {
+  border-color: #4184f3;
+  background: #f9fbff;
+}
+
+.commodity-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  opacity: 0.6;
+}
+
+.commodity-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 15px 0 8px 0;
+  font-weight: 500;
+}
+
+.commodity-subtext {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.btn-large {
+  padding: 12px 30px !important;
+  font-size: 0.95rem;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .funds-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .funds-column {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .funds-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .funds-buttons {
+    width: 100%;
+  }
+
+  .funds-buttons .btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .card-section {
+    padding: 15px;
+  }
+
+  .data-row {
+    padding: 10px 0;
+  }
+
+  .label {
+    font-size: 0.85rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+}
