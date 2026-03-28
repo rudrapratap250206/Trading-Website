@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd backend && npm install && cd ../frontend && npm install && npm run build && cd ..",
-  "installCommand": "cd backend && npm install && cd ../frontend && npm install && cd ..",
+  "buildCommand": "cd backend && npm install && cd ../dashboard && npm install && npm run build && cd ..",
+  "installCommand": "cd backend && npm install && cd ../dashboard && npm install && cd ..",
   "env": {
     "MONGO_URL": "mongodb+srv://rudrapratap51479145518_db_user:Rps250206@rpscluster.xyta3km.mongodb.net/zerodha?appName=RpsCluster",
     "NODE_ENV": "production"
@@ -12,7 +12,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/frontend/build/index.html"
+      "destination": "/dashboard/build/index.html"
     }
   ]
 }
