@@ -16,7 +16,7 @@ const Menu = () => {
   const activeMenuClass = "menu selected";
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} />
+      <img src="logo.png" alt="Logo" style={{ width: "50px" }} />
       <div className="menus">
         <ul>
           <li>
@@ -97,7 +97,6 @@ const Menu = () => {
           <div className="avatar">ZU</div>
           <p className="username">USERID</p>
         </div>
-        
       </div>
     </div>
   );
