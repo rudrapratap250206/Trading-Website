@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm install --prefix ./dashboard && npm run build --prefix ./dashboard",
-  "installCommand": "cd backend && npm install && cd ../dashboard && npm install && cd ..",
+  "installCommand": "npm install --prefix ./backend && npm install --prefix ./dashboard",
   "env": {
     "MONGO_URL": "mongodb+srv://rudrapratap51479145518_db_user:Rps250206@rpscluster.xyta3km.mongodb.net/zerodha?appName=RpsCluster",
     "NODE_ENV": "production"
