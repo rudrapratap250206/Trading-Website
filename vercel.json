@@ -2,7 +2,7 @@
   "buildCommand": "cd backend && npm install && cd ../frontend && npm install && npm run build && cd ..",
   "installCommand": "cd backend && npm install && cd ../frontend && npm install && cd ..",
   "env": {
-    "MONGO_URL": "@mongo_url",
+    "MONGO_URL": "mongodb+srv://rudrapratap51479145518_db_user:Rps250206@rpscluster.xyta3km.mongodb.net/zerodha?appName=RpsCluster",
     "NODE_ENV": "production"
   },
   "rewrites": [
