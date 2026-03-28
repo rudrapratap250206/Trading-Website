@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
+// allow overriding the backend base URL via environment variable
+export const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -10,13 +11,15 @@ const api = axios.create({
 // Request interceptor
 api.interceptors.request.use(
   (config) => {
-    console.log(`[API] Requesting: ${config.method.toUpperCase()} ${config.url}`);
+    console.log(
+      `[API] Requesting: ${config.method.toUpperCase()} ${config.url}`,
+    );
     return config;
   },
   (error) => {
     console.error("[API] Request Error:", error);
     return Promise.reject(error);
-  }
+  },
 );
 
 // Response interceptor
@@ -34,11 +37,17 @@ api.interceptors.response.use(
     }
     // Other HTTP errors
     else {
-      error.userMessage = error.response.data?.message || `Server error: ${error.response.status}`;
-      console.error("[API] HTTP Error:", error.response.status, error.userMessage);
+      error.userMessage =
+        error.response.data?.message ||
+        `Server error: ${error.response.status}`;
+      console.error(
+        "[API] HTTP Error:",
+        error.response.status,
+        error.userMessage,
+      );
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export default api;

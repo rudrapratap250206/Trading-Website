@@ -29,7 +29,10 @@ const BuyActionWindow = ({ uid, actionType = "buy" }) => {
       context.closeBuyWindow();
       alert(`${mode} order placed successfully!`);
     } catch (error) {
-      const errorMsg = error.userMessage || error.message || "Network error - Backend server may not be running";
+      const errorMsg =
+        error.userMessage ||
+        error.message ||
+        "Network error - Backend server may not be running";
       console.error(`Error placing ${mode} order:`, errorMsg);
       setError(errorMsg);
     }
@@ -71,22 +74,28 @@ const BuyActionWindow = ({ uid, actionType = "buy" }) => {
           <button className="btn btn-blue" onClick={handleActionClick}>
             {buttonText}
           </button>
-          <button type="button" className="btn btn-grey" onClick={handleCancelClick}>
+          <button
+            type="button"
+            className="btn btn-grey"
+            onClick={handleCancelClick}
+          >
             Cancel
           </button>
         </div>
       </div>
       {error && (
-        <div style={{
-          backgroundColor: "#ffe6e6",
-          border: "1px solid #ff4444",
-          color: "#d32f2f",
-          padding: "10px",
-          borderRadius: "4px",
-          marginTop: "10px",
-          fontSize: "13px",
-          fontWeight: "bold"
-        }}>
+        <div
+          style={{
+            backgroundColor: "#ffe6e6",
+            border: "1px solid #ff4444",
+            color: "#d32f2f",
+            padding: "10px",
+            borderRadius: "4px",
+            marginTop: "10px",
+            fontSize: "13px",
+            fontWeight: "bold",
+          }}
+        >
           ⚠️ {error}
         </div>
       )}
